@@ -32,7 +32,6 @@ const signin = async (req, res, next) => {
     if(!email || !password || !email === '' || !password === '') {
     next(errorHandler(400, 'All fields are required'))
     }
-
     try {
         const validUser = await User.findOne({email});
         if (!validUser){
